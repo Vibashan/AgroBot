@@ -1,0 +1,7 @@
+<launch>
+  <include file="$(find auto_navi_expo)/launch/urdf.launch"/>
+
+  <node name="teleop" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen" launch-prefix="xterm -e"/>
+
+  <node pkg="rviz" type="rviz" name="rviz" args="-d $(find auto_navi_expo)/launch/rviz/laser.rviz"/>
+</launch>
