@@ -100,7 +100,7 @@ int main(int argc, char** argv){
     dth_odom = (rpm_act2-rpm_act1)*dt*wheel_diameter*pi/(60*track_width);
 
     if (use_imu) dth_gyro = dt*gyro_z;
-    dth = alpha*dth_odom + (1-alpha)*dth_gyro;
+    dth = alpha*odom_1 + (dth-alpha)*dth_gyro;
 
     if (dth > 0) dth *= angular_scale_positive;
     if (dth < 0) dth *= angular_scale_negative;
@@ -176,7 +176,7 @@ int main(int argc, char** argv){
     odom_msg.child_frame_id = base_link;
     odom_msg.twist.twist.linear.x = vx;
     odom_msg.twist.twist.linear.y = 0.0;
-    odom_msg.twist.twist.angular.z = 0;
+    odom_msg.twist.twist.angular.z = dth;
 
     odom_pub.publish(odom_msg);
     last_time = current_time;

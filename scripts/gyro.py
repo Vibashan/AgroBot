@@ -1,6 +1,4 @@
 #!/usr/bin/env python
-#author: Sung Jik Cha
-#credits: ros turtlebot node: https://github.com/Arkapravo/turtlebot
 
 import rospy
 import socket
@@ -10,8 +8,8 @@ from geometry_msgs.msg import Vector3
 from math import sqrt,atan2,cos,sin,pi
 
 def imu_publisher(sock):
-    host="192.168.42.185"
-    port=5555
+    host="192.168.43.18"
+    port=2055
     theta = 0
     gyro_x_offset = 0.0
     gyro_y_offset = 0.0
@@ -42,11 +40,13 @@ def imu_publisher(sock):
     while not rospy.is_shutdown():
         data,addr = sock.recvfrom(1024)
         line = data.split(',')
-        if len(line) == 4:  #received complete packet
+        #print line 
+        if len(line) == 3:  #received complete packet
             current_time = rospy.Time.now()
             gyro_x = float(line[0])
             gyro_y = float(line[1])
             gyro_z = float(line[2])
+            #print (gyro_z)
             if count < num_callibration_itrs:
                 gyro_x_offset += gyro_x
                 gyro_y_offset += gyro_y
@@ -59,16 +59,11 @@ def imu_publisher(sock):
                 rospy.loginfo("finished callibrating yaw")
                 count += 1
 
-            #publish ros Imu message
             else:
                 gyro_x -= gyro_x_offset
                 gyro_y -= gyro_y_offset
                 gyro_z -= gyro_z_offset
 
-                #discretize readings to round off noise
-                #gyro_x = float(int(gyro_x*100))/100.0;
-                #gyro_y = float(int(gyro_y*100))/100.0;
-                #gyro_z = float(int(gyro_z*100))/100.0;
                 if debug:
                     rospy.loginfo('x %s y %s z %s', gyro_x, gyro_y, gyro_z)
                 gyro_msg = Vector3()
@@ -91,6 +86,7 @@ def imu_publisher(sock):
                 imu_msg.angular_velocity_covariance[0] = -1
                 imu_msg.linear_acceleration_covariance[0] = -1
                 imu_pub.publish(imu_msg)
+                #print 'done'
             last_time = current_time
             #rate.sleep()
         else:
@@ -99,10 +95,15 @@ def imu_publisher(sock):
              
 
 if __name__ == '__main__':
-    try:
-        sock=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-        sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
-        imu_publisher(sock)
-    except rospy.ROSInterruptException:
-        pass
+	
+	try:
+		sock=socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+		sock.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+		sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
+		imu_publisher(sock)
+
+	except rospy.ROSInterruptException:
+		pass    
+    
+    
+        

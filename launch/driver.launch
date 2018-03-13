@@ -1,3 +1,5 @@
+<?xml version="1.0"?>
+
 <launch>
   <!--serial communication between arduino and pc via usb /-->
   <node name="arduino_serial_node" pkg="rosserial_python" type="serial_node.py" output="screen">
@@ -6,19 +8,19 @@
   </node>
 
   <node name="imu_node" pkg="auto_navi_expo" type="gyro.py" output="screen">
-    <param name="host" value="192.168.42.185" />
+    <param name="host" value="192.168.43.18" />
     <param name="num_callibration_itrs" value="0" />
     <param name="debug" value="false" />
   </node>
 
   <node name="base_controller_node" pkg="auto_navi_expo" type="base_controller">
     <param name="publish_tf" value="true" />
-    <param name="publish_rate" value="10.0" />
-    <param name="linear_scale_positive" value="0.99" />
-    <param name="linear_scale_negative" value="0.99" />
-    <param name="angular_scale_positive" value="1.0" />
-    <param name="angular_scale_negative" value="1.0" />
-    <param name="angular_scale_accel" value="0.0" />
+    <param name="publish_rate" value="100.0" />
+    <param name="linear_scale_positive" value="1.27" />
+    <param name="linear_scale_negative" value="1.27" />
+    <param name="angular_scale_positive" value="1.04" />
+    <param name="angular_scale_negative" value="1.04" />
+    <param name="angular_scale_accel" value="0.1" />
     <param name="alpha" value="0.5" />
     <param name="use_imu" value="true" />
   </node>

@@ -1,19 +1,19 @@
 DWAPlannerROS:
 # Robot Configuration Parameters - Kobuki
-  max_vel_x: 0.15 # 0.55
+  max_vel_x: 0.4 # 0.55
   min_vel_x: 0.0
   max_vel_y: 0.0 # diff drive robot
   min_vel_y: 0.0 # diff drive robot
-  max_trans_vel: 0.15 # choose slightly less than the base's capability
+  max_trans_vel: 0.4 # choose slightly less than the base's capability
   min_trans_vel: 0.1 # this is the min trans velocity when there is negligible rotational velocity
   trans_stopped_vel: 0.1
 # Warning!
 # do not set min_trans_vel to 0.0 otherwise dwa will always think translational velocities
 # are non-negligible and small in place rotational velocities will be created.
-  max_rot_vel: 0.25 # choose slightly less than the base's capability
-  min_rot_vel: 0.15 # this is the min angular velocity when there is negligible translational velocity
+  max_rot_vel: 0.8 # choose slightly less than the base's capability
+  min_rot_vel: 0.8 # this is the min angular velocity when there is negligible translational velocity
   rot_stopped_vel: 0.1
-  acc_lim_x: 1.0 
+  acc_lim_x: 2.0 
   acc_lim_theta: 0.2
   acc_lim_y: 0.0 # diff drive robot
 
@@ -23,7 +23,7 @@ DWAPlannerROS:
   # latch_xy_goal_tolerance: false
 
 # Forward Simulation Parameters
-  sim_time: 1.5 # 1.7
+  sim_time: 5 # 1.7
   vx_samples: 10 # 3
   vy_samples: 2 # diff drive robot, there is only one sample
   vtheta_samples: 40 # 20

@@ -81,7 +81,7 @@ class VelocityLogger(object):
 
 if __name__ == '__main__':
         rospy.init_node('velocityLogger')
-        velocityLogger = VelocityLogger('/home/sung/catkin_ws/src/patrick_the_robot/archive/OdomOutput.txt')
+        velocityLogger = VelocityLogger('/home/nikes/catkin_ws/src/auto_navi_expo/auto_navi_expo/archive/OdomOutput.txt')
         velocityLogger.start()
         rospy.spin()
         velocityLogger.close()
