@@ -32,10 +32,10 @@ https://www.youtube.com/watch?v=_kQo_sd1_AM
 5. If you aren’t using an android phone as an imu like I did, comment out the imu_node lines in robot_config.launch
 6. If you haven’t created a urdf model for your robot, comment out the urdf include lines in driver.launch, slam.launch,
    move_base.launch, and laser_scan.launch
-7. Try driving around the robot : $ roslaunch my_personal_robotic_companion driver.launch
+7. Try driving around the robot : $ roslaunch auto_navi_expo driver.launch
 8. For trying the laser scanner, SLAM gmapping, and navigation, roslaunch laser_scan.launch, slam.launch, and
 move_base.launch respectively.
 9. You will need to play around with the parameter settings in the launch files, such as the linear and angular scale constants in robot_config.launch, the params in amcl_diff.launch, the yaml files, etc.
 
-Future Work:
+Future Work:                                                                                                    
   Navigate to Multiway_points.
