@@ -25,7 +25,7 @@ https://www.youtube.com/watch?v=_kQo_sd1_AM
   – Android Studio
 ## Procedure:
 
-1. First clone my github repo using the command: $ git clone https://github.com/Vibashan/auto_navi_expo.git
+1. First clone my github repo using the command: $ git clone address/to/my/repo
 2. Install ros packages for navigation, freenect, and gmapping.
 3. Change the wheel diameter, track width, etc. in robot_specs.h
 4. Edit in robot_config.launch the static_transform_publisher args for tranformation of Kinect frame to Base link.
