@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:background="@drawable/back3"
+    android:layout_height="match_parent">
+    <ImageView
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="160dp"
+        android:scaleType="center"
+        android:id="@+id/opt1img"
+        android:layout_height="180dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/selectp"/>
+    <TextView
+        android:layout_width="210dp"
+        android:layout_height="180dp"
+        android:layout_toRightOf="@id/opt1img"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="3dp"
+        android:fontFamily="cursive"
+        android:textAlignment="center"
+        android:id="@+id/opt1text"
+        android:clickable="true"
+        android:onClick="opt1func"
+        android:background="#38037c"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:text="  \n\n\n Click here to select the \tplants for your garden "
+        />
+    <ImageView
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="160dp"
+        android:layout_below="@id/opt1img"
+        android:scaleType="center"
+        android:id="@+id/opt2img"
+        android:layout_height="160dp"
+        android:layout_marginTop="190dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/stats"/>
+    <TextView
+        android:layout_width="210dp"
+        android:layout_height="160dp"
+        android:layout_toRightOf="@id/opt2img"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/opt1text"
+        android:layout_marginLeft="3dp"
+        android:id="@+id/opt2text"
+        android:fontFamily="cursive"
+        android:clickable="true"
+        android:onClick="opt2func"
+        android:background="#38037c"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:text="  \n\n Click here to check &#160;    garden status"
+        />
+    <ImageView
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_width="160dp"
+        android:layout_below="@id/opt2img"
+        android:scaleType="center"
+        android:id="@+id/opt3img"
+        android:layout_height="188dp"
+        android:layout_marginTop="347dp"
+        android:layout_marginLeft="5dp"
+        android:src="@drawable/storehouse"/>
+    <TextView
+        android:layout_width="210dp"
+        android:layout_height="168dp"
+        android:layout_toRightOf="@id/opt2img"
+        android:layout_marginTop="5dp"
+        android:layout_below="@id/opt2text"
+        android:fontFamily="cursive"
+        android:layout_marginLeft="3dp"
+        android:id="@+id/opt3text"
+        android:clickable="true"
+        android:textAlignment="center"
+        android:onClick="opt3func"
+        android:background="#38037c"
+        android:textColor="#ffffff"
+        android:textSize="20dp"
+        android:text="  \n\n\n Click here to check your     &#160; storehouse"
+        />
+
+
+
+</RelativeLayout>

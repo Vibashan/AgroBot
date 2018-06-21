@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rajiv.thala.datasend">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter ip address:"
+        android:layout_centerVertical="true"
+        android:id="@+id/ip"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/ip"
+        android:text="OK"
+        android:id="@+id/ipbutton"
+        android:onClick="ipenter"/>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_marginTop="30dp"
+        android:hint="Enter data"
+        android:id="@+id/datatext"
+        android:layout_below="@id/ipbutton"
+        android:layout_height="wrap_content" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/datatext"
+        android:text="send"
+        android:onClick="senddata"
+        android:id="@+id/sendbutton"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sendbutton"
+        android:id="@+id/data"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="20dp"/>
+
+
+</RelativeLayout>

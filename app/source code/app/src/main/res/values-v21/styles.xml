@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="mybar" parent="Widget.AppCompat.SeekBar">
+
+        <item name="android:progressBackgroundTint">#f4511e</item>
+        <item name="android:progressTint" tools:ignore="NewApi">#388e3c</item>
+        <item name="android:colorControlActivated" tools:ignore="NewApi">#c51162</item>
+
+    </style>
+
+
+</resources>

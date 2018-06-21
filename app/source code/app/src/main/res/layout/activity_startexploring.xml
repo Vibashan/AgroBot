@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context="com.example.rajiv.thala.startexploring">
+    <Button
+        android:id="@+id/ps"
+
+        android:text="select plants"
+        android:textColor="#FFFFFF"
+        android:onClick="proportionselect"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="100dp"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button"
+        android:shadowColor="#A86F95"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        />
+    <Button
+        android:layout_below="@id/ps"
+        android:id="@+id/ps1"
+         android:layout_marginTop="50dp"
+        android:text="view data"
+        android:textColor="#FFFFFF"
+        android:onClick="dataview"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button"
+        android:shadowColor="#493BA8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        />
+    <Button
+        android:layout_below="@id/ps1"
+        android:id="@+id/ps2"
+        android:layout_marginTop="50dp"
+        android:text="check stock"
+        android:textColor="#FFFFFF"
+
+        android:onClick="stocks"
+        android:textSize="30sp"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_width="270dp"
+        android:layout_height="60dp"
+        android:background="@drawable/button"
+        android:shadowColor="#493BA8"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        />
+
+</RelativeLayout>
